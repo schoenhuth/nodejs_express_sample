@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
+var express = require('express')
+var indexRouter = require('./routes/index');
+var app = express()
+
 
 app.set('view engine', 'pug')
 
-app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!' })
-})
+app.use( '/', indexRouter);
 
-app.listen(8081, () => console.log('Example app listening on port 80!'))
+app.listen(8081, () => console.log('Example app listening on port 8081!'))
